@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Algorithms</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -43,9 +44,9 @@
         # greater than key, to one position ahead
         # of their current position</span>
         j = i-1
-        while j >= 0 and key < arr[j] :
-                arr[j + 1] = arr[j]
-                j -= 1
+        while j >= 0 and key &lt arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
         arr[j + 1] = key</pre>
     </div>
     <!--Selection sort-->
@@ -109,8 +110,8 @@
         i = j = k = 0
 
         <span># Copy data to temp arrays L[] and R[]</span>
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
+        while i &lt len(L) and j &lt len(R):
+            if L[i] &lt  R[j]:
                 arr[k] = L[i]
                 i+=1
             else:
@@ -119,12 +120,12 @@
             k+=1
 
         <span># Checking if any element was left</span>
-        while i < len(L):
+        while i &lt len(L):
             arr[k] = L[i]
             i+=1
             k+=1
 
-        while j < len(R):
+        while j &lt len(R):
             arr[k] = R[j]
             j+=1
             k+=1</pre>
@@ -153,12 +154,12 @@ def heapify(arr, n, i):
 
     <span># See if left child of root exists and is
     # greater than root</span>
-    if l < n and arr[i] < arr[l]:
+    if l &lt n and arr[i] &lt arr[l]:
         largest = l
     <span>
     # See if right child of root exists and is
     # greater than root</span>
-    if r < n and arr[largest] < arr[r]:
+    if r &lt n and arr[largest] &lt arr[r]:
         largest = r
     <span>
     # Change root, if needed</span>
