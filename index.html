@@ -44,7 +44,7 @@
         # greater than key, to one position ahead
         # of their current position</span>
         j = i-1
-        while j >= 0 and key &lt arr[j]:
+        while j &gt;= 0 and key &lt; arr[j]:
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key</pre>
@@ -61,7 +61,7 @@
             first position, and repeats these steps for the remainder of the list.
             It does no more than n swaps, and thus is useful where swapping is very expensive.
         </p>
-        <pre>def selection_sort(arr->[]):
+        <pre>def selection_sort(arr-&gt;[]):
         <span># Traverse through all array elements</span>
     for i in range(len(arr)):
 
@@ -69,7 +69,7 @@
         # unsorted array</span>
         min_idx = i
         for j in range(i+1, len(arr)):
-            if arr[min_idx] > arr[j]:
+            if arr[min_idx] &gt; arr[j]:
                 min_idx = j
 
         <span># Swap the found minimum element with
@@ -132,51 +132,51 @@
     </div>
     <!-- Heapsort>=-->
     <div class="heap-sort">
-    <h3 id="heapsort">Heapsort</h3>
-    <p>
-        Heapsort is a much more efficient version of selection sort. It also works
-        by determining the largest (or smallest) element of the list, placing that
-        at the end (or beginning) of the list, then continuing with the rest of the list, but
-        accomplishes this task efficiently by using a data structure called a heap,
-        a special type of binary tree.[29] Once the data list has been made into a
-        heap, the root node is guaranteed to be the largest (or smallest) element. When it is removed
-        and placed at the end of the list, the heap is rearranged so the largest
-        element remaining moves to the root. Using the heap, finding the next largest
-        element takes O(log n) time, instead of O(n) for a linear scan as in simple selection sort.
-        This allows Heapsort to run in O(n log n) time, and this is also the worst case complexity.
-    </p>
-    <pre><span># To heapify subtree rooted at index i.
+        <h3 id="heapsort">Heapsort</h3>
+        <p>
+            Heapsort is a much more efficient version of selection sort. It also works
+            by determining the largest (or smallest) element of the list, placing that
+            at the end (or beginning) of the list, then continuing with the rest of the list, but
+            accomplishes this task efficiently by using a data structure called a heap,
+            a special type of binary tree.[29] Once the data list has been made into a
+            heap, the root node is guaranteed to be the largest (or smallest) element. When it is removed
+            and placed at the end of the list, the heap is rearranged so the largest
+            element remaining moves to the root. Using the heap, finding the next largest
+            element takes O(log n) time, instead of O(n) for a linear scan as in simple selection sort.
+            This allows Heapsort to run in O(n log n) time, and this is also the worst case complexity.
+        </p>
+        <pre><span># To heapify subtree rooted at index i.
 # n is size of heap</span>
 def heapify(arr, n, i):
     largest = i   <span># Initialize largest as root</span>
     l = 2 * i + 1    <span># left = 2*i + 1</span>
     r = 2 * i + 2    <span># right = 2*i + 2</span>
 
-    <span># See if left child of root exists and is
+        <span># See if left child of root exists and is
     # greater than root</span>
-    if l &lt n and arr[i] &lt arr[l]:
+    if l &lt; n and arr[i] &lt; arr[l]:
         largest = l
-    <span>
+        <span>
     # See if right child of root exists and is
     # greater than root</span>
-    if r &lt n and arr[largest] &lt arr[r]:
+    if r &lt; n and arr[largest] &lt; arr[r]:
         largest = r
-    <span>
+        <span>
     # Change root, if needed</span>
     if largest != i:
         arr[i],arr[largest] = arr[largest],arr[i] <span># swap</span>
-    <span>
+        <span>
         # Heapify the root.</span>
         heapify(arr, n, largest)
 
 <span># The main function to sort an array of given size</span>
 def heapSort(arr):
     n = len(arr)
-    <span>
+        <span>
     # Build a maxheap.</span>
     for i in range(n/2 - 1, -1, -1):
         heapify(arr, n, i)
-    <span>
+        <span>
     # One by one extract elements</span>
     for i in range(n-1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i] <span># swap</span>
@@ -184,28 +184,28 @@ def heapSort(arr):
     </div>
     <!-- Quicksort -->
     <div class="quicksort">
-    <h3 id="quicksort">Quicksort</h3>
-    <p>
-        Quicksort is a divide and conquer algorithm which relies on a partition operation: to partition an array, an element called a pivot is selected.[30][31] All elements smaller than the pivot are moved before it and all greater elements are moved
-        after it. This can be done efficiently in linear time and in-place. The lesser and greater sublists are then recursively sorted. This yields average time complexity of O(n log n), with low overhead, and thus this is a popular algorithm. Efficient
-        implementations of quicksort (with in-place partitioning) are typically unstable sorts and somewhat complex, but are among the fastest sorting algorithms in practice. Together with its modest O(log n) space usage, quicksort is one of the most
-        popular sorting algorithms and is available in many standard programming libraries.
-        <br>The important caveat about quicksort is that its worst-case performance is O(n2); while this is rare, in naive implementations (choosing the first or last element as pivot) this occurs for sorted data, which is a common case. The most complex
-        issue in quicksort is thus choosing a good pivot element, as consistently poor choices of pivots can result in drastically slower O(n2) performance, but good choice of pivots yields O(n log n) performance, which is asymptotically optimal. For
-        example, if at each step the median is chosen as the pivot then the algorithm works in O(n log n). Finding the median, such as by the median of medians selection algorithm is however an O(n) operation on unsorted lists and therefore exacts
-        significant overhead with sorting. In practice choosing a random pivot almost certainly yields O(n log n) performance.
-    </p>
-        </div>
+        <h3 id="quicksort">Quicksort</h3>
+        <p>
+            Quicksort is a divide and conquer algorithm which relies on a partition operation: to partition an array, an element called a pivot is selected.[30][31] All elements smaller than the pivot are moved before it and all greater elements are moved
+            after it. This can be done efficiently in linear time and in-place. The lesser and greater sublists are then recursively sorted. This yields average time complexity of O(n log n), with low overhead, and thus this is a popular algorithm. Efficient
+            implementations of quicksort (with in-place partitioning) are typically unstable sorts and somewhat complex, but are among the fastest sorting algorithms in practice. Together with its modest O(log n) space usage, quicksort is one of the most
+            popular sorting algorithms and is available in many standard programming libraries.
+            <br>The important caveat about quicksort is that its worst-case performance is O(n2); while this is rare, in naive implementations (choosing the first or last element as pivot) this occurs for sorted data, which is a common case. The most complex
+            issue in quicksort is thus choosing a good pivot element, as consistently poor choices of pivots can result in drastically slower O(n2) performance, but good choice of pivots yields O(n log n) performance, which is asymptotically optimal. For
+            example, if at each step the median is chosen as the pivot then the algorithm works in O(n log n). Finding the median, such as by the median of medians selection algorithm is however an O(n) operation on unsorted lists and therefore exacts
+            significant overhead with sorting. In practice choosing a random pivot almost certainly yields O(n log n) performance.
+        </p>
+    </div>
     <!-- Bubble sort -->
     <div class="bubble-sort">
-    <h3 id="bubble-sort">Bubble Sort</h3>
-    <p>
-        Bubble sort is a simple sorting algorithm. The algorithm starts at the beginning of the data set. It compares the first two elements, and if the first is greater than the second, it swaps them. It continues doing this for each pair of adjacent
-        elements to the end of the data set. It then starts again with the first two elements, repeating until no swaps have occurred on the last pass.[33] This algorithm's average time and worst-case performance is O(n2), so it is rarely used to sort
-        large, unordered data sets. Bubble sort can be used to sort a small number of items (where its asymptotic inefficiency is not a high penalty). Bubble sort can also be used efficiently on a list of any length that is nearly sorted (that is, the
-        elements are not significantly out of place). For example, if any number of elements are out of place by only one position (e.g. 0123546789 and 1032547698), bubble sort's exchange will get them in order on the first pass, the second pass will
-        find all elements in order, so the sort will take only 2n time.
-    </p>
-        </div>
+        <h3 id="bubble-sort">Bubble Sort</h3>
+        <p>
+            Bubble sort is a simple sorting algorithm. The algorithm starts at the beginning of the data set. It compares the first two elements, and if the first is greater than the second, it swaps them. It continues doing this for each pair of adjacent
+            elements to the end of the data set. It then starts again with the first two elements, repeating until no swaps have occurred on the last pass.[33] This algorithm's average time and worst-case performance is O(n2), so it is rarely used to sort
+            large, unordered data sets. Bubble sort can be used to sort a small number of items (where its asymptotic inefficiency is not a high penalty). Bubble sort can also be used efficiently on a list of any length that is nearly sorted (that is, the
+            elements are not significantly out of place). For example, if any number of elements are out of place by only one position (e.g. 0123546789 and 1032547698), bubble sort's exchange will get them in order on the first pass, the second pass will
+            find all elements in order, so the sort will take only 2n time.
+        </p>
+    </div>
 </body>
 </html>
