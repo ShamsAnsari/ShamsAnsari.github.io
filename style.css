@@ -1,0 +1,26 @@
+body {
+	font-family: sans-serif;
+}
+
+p {
+	margin-left: 1.5em;
+}
+
+pre {
+	margin-left: 1.5em;
+	background-color: #e0e0e0;
+	border-radius: 15px;
+	color: rgba(0, 0, 0, .9);
+	font-family: Consolas, monospace;
+	margin-bottom: 10px;
+	overflow: auto;
+	padding: 10px;
+}
+
+	pre span {
+		color: grey;
+	}
+
+#title {
+	text-align: center;
+}
