@@ -1,17 +1,19 @@
 body {
 	font-family: sans-serif;
 	margin:auto;
-	width:90%;
+	width:75%;
 }
 h3{
 	margin-top:3em;
 }
 .info {
-	margin-left: 3em;
+	margin:auto;
+	width:90%;
 }
 
 	.info p {
 		margin-bottom: 30px;
+		line-height:150%;
 	}
 
 .code{
