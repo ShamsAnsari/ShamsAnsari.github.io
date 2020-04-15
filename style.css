@@ -2,18 +2,17 @@ body {
 	font-family: sans-serif;
 }
 
-.info{
-	margin-left:3em;
-}
-.info p{
-	margin-bottom:30px;
-}
-.gist{
-	width:640px;
+.info {
+	margin-left: 3em;
 }
 
+	.info p {
+		margin-bottom: 30px;
+	}
 
-
+.gist {
+	width: 640px;
+}
 
 
 #title {
@@ -23,8 +22,9 @@ body {
 a:hover {
 	background-color: rgba(255, 216, 0,.4);
 }
-script{
-	margin-left:2em;
+
+script {
+	margin-left: 2em;
 }
 
 footer {
@@ -32,6 +32,6 @@ footer {
 	padding-top: 8px;
 	margin-top: 7px;
 	border-top: 1px solid #d2d2d7;
-	padding-right:10px;
-	padding-left:10px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
