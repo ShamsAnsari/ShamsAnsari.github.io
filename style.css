@@ -1,7 +1,11 @@
 body {
 	font-family: sans-serif;
+	margin:auto;
+	width:90%;
 }
-
+h3{
+	margin-top:3em;
+}
 .info {
 	margin-left: 3em;
 }
@@ -10,8 +14,9 @@ body {
 		margin-bottom: 30px;
 	}
 
-.gist{
+.code{
 	width:640px;
+
 }
 
 
