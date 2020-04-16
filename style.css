@@ -3,6 +3,10 @@ body {
 	margin:auto;
 	width:75%;
 }
+li{
+	line-height:130%;
+	font-size:120%;
+}
 h3{
 	margin-top:3em;
 }
