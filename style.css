@@ -3,6 +3,10 @@ body {
 	margin:auto;
 	width:75%;
 }
+
+
+
+
 li{
 	line-height:130%;
 	font-size:120%;
@@ -22,21 +26,30 @@ h3{
 
 .code{
 	width:640px;
+	margin:auto;
+	
+}
+.visual-algo{
+	width:640px;
+	margin:auto;
+}
 
+.buttons {
+	margin-left:45%;
 }
 
 
 #title {
 	text-align: center;
+	margin-top:10px;
+	
 }
 
 a:hover {
 	background-color: rgba(255, 216, 0,.4);
 }
 
-script {
-	margin-left: 2em;
-}
+
 
 footer {
 	text-align: center;

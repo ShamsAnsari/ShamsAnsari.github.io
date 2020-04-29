@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/x-icon" href="sheep.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="sheep.png">
     <title>Algorithms</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src=https://d3js.org/d3.v5.min.js></script>
 </head>
 <body>
 
@@ -39,6 +40,7 @@
             <div class="code">
                 <script src="https://gist.github.com/ShamsAnsari/56fde9989af6992f556b4bdd656fb6b3.js"></script>
             </div>
+            
         </div>
     </div>
     <!--Selection sort-->
@@ -145,9 +147,22 @@
             <div class="code">
                 <script src="https://gist.github.com/ShamsAnsari/c5d1b3bbcad2b9f2cae32e8c75c86589.js"></script>
             </div>
+            <div>
+                <div class="visual-algo">
+                    <svg id='root' width=640 height=400></svg>
+                </div>
+                <div class="buttons">
+                    <button id='play-button' type="button">start</button>
+                    <button id='generate-button' type="button">generate</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer><a href="#title">Top</a></footer>
+    <footer>
+        <a href="#title">Top</a>
+
+    </footer>
+    <script src=script.js></script>
 </body>
 </html>
