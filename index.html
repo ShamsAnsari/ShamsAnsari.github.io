@@ -13,15 +13,75 @@
     <div class="table-contents">
         <h3>Table of contents</h3>
         <ul>
-            <li><a href="#insertion-sort">Insertion sort</a></li>
+            <li><a href="#bubble-sort">Bubble sort</a></li>
             <li><a href="#selection-sort">Selection sort </a></li>
+            <li><a href="#insertion-sort">Insertion sort</a></li>
+            <!--
             <li><a href="#merge-sort">Merge sort </a></li>
             <li><a href="#heapsort">Heapsort</a></li>
             <li><a href="#quicksort">Quicksort</a></li>
-            <li><a href="#bubble-sort">Bubble sort</a></li>
+                -->
+
         </ul>
     </div>
-    <!-- Insertion sort -->
+    <div class="bubble-sort">
+        <h3 id="bubble-sort">Bubble Sort</h3>
+
+        <div class="info">
+            <p>
+                Bubble sort is a simple sorting algorithm. The algorithm starts at the beginning of the data set. It compares the first two elements, and if the first is greater than the second, it swaps them. It continues doing this for each pair of adjacent
+                elements to the end of the data set. It then starts again with the first two elements, repeating until no swaps have occurred on the last pass.[33] This algorithm's average time and worst-case performance is O(n2), so it is rarely used to sort
+                large, unordered data sets. Bubble sort can be used to sort a small number of items (where its asymptotic inefficiency is not a high penalty). Bubble sort can also be used efficiently on a list of any length that is nearly sorted (that is, the
+                elements are not significantly out of place). For example, if any number of elements are out of place by only one position (e.g. 0123546789 and 1032547698), bubble sort's exchange will get them in order on the first pass, the second pass will
+                find all elements in order, so the sort will take only 2n time.
+            </p>
+            <div class="code">
+                <script src="https://gist.github.com/ShamsAnsari/c5d1b3bbcad2b9f2cae32e8c75c86589.js"></script>
+            </div>
+            <div class="interactive" style="width: 640px; height: 400px;">
+                <svg id='bubble-root' width=640 height=400></svg>
+                <div class="buttons-div">
+
+                    <button class="buttons" id='bubble-play-button' type="button">START</button>
+                    <button class="buttons" id='bubble-generate-button' type="button">GENERATE</button>
+                    <input type="number" id="bubble-duration-input"
+                           min="0" max="1400" value="100" step="100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="selection-sort">
+
+        <h3 id="selection-sort">Selection Sort</h3>
+        <div class="info">
+            <p>
+                Selection sort is an in-place comparison sort. It has O(n2) complexity,
+                making it inefficient on large lists, and generally performs worse than the
+                similar insertion sort. Selection sort is noted for its simplicity, and also
+                has performance advantages over more complicated algorithms in certain situations.
+                <br>The algorithm finds the minimum value, swaps it with the value in the
+                first position, and repeats these steps for the remainder of the list.
+                It does no more than n swaps, and thus is useful where swapping is very expensive.
+            </p>
+            <div class="code">
+                <script src="https://gist.github.com/ShamsAnsari/65bb38b570aa0fd7e329de927264a013.js"></script>
+            </div>
+            <div class="interactive" style="width: 640px; height: 400px;">
+                <svg id='selection-root' width=640 height=400></svg>
+                <div class="buttons-div">
+
+                    <button class="buttons" id='selection-play-button' type="button">START</button>
+                    <button class="buttons" id='selection-generate-button' type="button">GENERATE</button>
+                    <input type="number" id="selection-duration-input"
+                           min="0" max="1400" value="100" step="100">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
     <div class="insertion-sort">
 
         <h3 id="insertion-sort">Insertion Sort</h3>
@@ -40,124 +100,97 @@
             <div class="code">
                 <script src="https://gist.github.com/ShamsAnsari/56fde9989af6992f556b4bdd656fb6b3.js"></script>
             </div>
-            
-        </div>
-    </div>
-    <!--Selection sort-->
-    <div class="selection-sort">
+            <div class="interactive" style="width: 640px; height: 400px;">
+                <svg id='insertion-root' width=640 height=400></svg>
+                <div class="buttons-div">
 
-        <h3 id="selection-sort">Selection Sort</h3>
-        <div class="info">
-            <p>
-                Selection sort is an in-place comparison sort. It has O(n2) complexity,
-                making it inefficient on large lists, and generally performs worse than the
-                similar insertion sort. Selection sort is noted for its simplicity, and also
-                has performance advantages over more complicated algorithms in certain situations.
-                <br>The algorithm finds the minimum value, swaps it with the value in the
-                first position, and repeats these steps for the remainder of the list.
-                It does no more than n swaps, and thus is useful where swapping is very expensive.
-            </p>
-            <div class="code">
-                <script src="https://gist.github.com/ShamsAnsari/65bb38b570aa0fd7e329de927264a013.js"></script>
-            </div>
-        </div>
-    </div>
-    <!-- Merge sort -->
-    <div class="merge-sort">
-
-        <h3 id="merge-sort">Merge Sort</h3>
-        <div class="info">
-            <p>
-                Merge sort takes advantage of the ease of merging already sorted lists into
-                a new sorted list. It starts by comparing every two elements (i.e., 1 with
-                2, then 3 with 4...) and swapping them if the first should come after the
-                second. It then merges each of the resulting lists of two into lists of
-                four, then merges those lists of four, and so on; until at last two lists
-                are merged into the final sorted list. Of the algorithms described here,
-                this is the first that scales well to very large lists, because its
-                worst-case running time is O(n log n). It is also easily applied to lists,
-                not only arrays, as it only requires sequential access, not random access.
-                However, it has additional O(n) space complexity, and involves a large
-                number of copies in simple implementations.
-                <br>Merge sort has seen a relatively recent surge in popularity for practical
-                implementations, due to its use in the sophisticated algorithm Timsort,
-                which is used for the standard sort routine in the programming languages
-                Python and Java (as of JDK7). Merge sort itself is the standard
-                routine in Perl, among others, and has been used in Java at least
-                since 2000 in JDK1.3.
-            </p>
-            <div class="code">
-                <script src="https://gist.github.com/ShamsAnsari/db1c497dc251c812d1b29b576c04660a.js"></script>
-            </div>
-        </div>
-    </div>
-    <!-- Heapsort>=-->
-    <div class="heap-sort">
-
-        <h3 id="heapsort">Heapsort</h3>
-        <div class="info">
-            <p>
-                Heapsort is a much more efficient version of selection sort. It also works
-                by determining the largest (or smallest) element of the list, placing that
-                at the end (or beginning) of the list, then continuing with the rest of the list, but
-                accomplishes this task efficiently by using a data structure called a heap,
-                a special type of binary tree.[29] Once the data list has been made into a
-                heap, the root node is guaranteed to be the largest (or smallest) element. When it is removed
-                and placed at the end of the list, the heap is rearranged so the largest
-                element remaining moves to the root. Using the heap, finding the next largest
-                element takes O(log n) time, instead of O(n) for a linear scan as in simple selection sort.
-                This allows Heapsort to run in O(n log n) time, and this is also the worst case complexity.
-            </p>
-            <div class="code">
-                <script src="https://gist.github.com/ShamsAnsari/1f8a9127aa130d68478922eab1e7c1ae.js"></script>
-            </div>
-        </div>
-    </div>
-    <!-- Quicksort -->
-    <div class="quicksort">
-        <h3 id="quicksort">Quicksort</h3>
-        <div class="info">
-            <p>
-                Quicksort is a divide and conquer algorithm which relies on a partition operation: to partition an array, an element called a pivot is selected.[30][31] All elements smaller than the pivot are moved before it and all greater elements are moved
-                after it. This can be done efficiently in linear time and in-place. The lesser and greater sublists are then recursively sorted. This yields average time complexity of O(n log n), with low overhead, and thus this is a popular algorithm. Efficient
-                implementations of quicksort (with in-place partitioning) are typically unstable sorts and somewhat complex, but are among the fastest sorting algorithms in practice. Together with its modest O(log n) space usage, quicksort is one of the most
-                popular sorting algorithms and is available in many standard programming libraries.
-                <br>The important caveat about quicksort is that its worst-case performance is O(n2); while this is rare, in naive implementations (choosing the first or last element as pivot) this occurs for sorted data, which is a common case. The most complex
-                issue in quicksort is thus choosing a good pivot element, as consistently poor choices of pivots can result in drastically slower O(n2) performance, but good choice of pivots yields O(n log n) performance, which is asymptotically optimal. For
-                example, if at each step the median is chosen as the pivot then the algorithm works in O(n log n). Finding the median, such as by the median of medians selection algorithm is however an O(n) operation on unsorted lists and therefore exacts
-                significant overhead with sorting. In practice choosing a random pivot almost certainly yields O(n log n) performance.
-            </p>
-            <div class="code">
-                <script src="https://gist.github.com/ShamsAnsari/2cf342c913a5f35f33ed799d6c82e244.js"></script>
-            </div>
-        </div>
-    </div>
-    <!-- Bubble sort -->
-    <div class="bubble-sort">
-        <h3 id="bubble-sort">Bubble Sort</h3>
-
-        <div class="info">
-            <p>
-                Bubble sort is a simple sorting algorithm. The algorithm starts at the beginning of the data set. It compares the first two elements, and if the first is greater than the second, it swaps them. It continues doing this for each pair of adjacent
-                elements to the end of the data set. It then starts again with the first two elements, repeating until no swaps have occurred on the last pass.[33] This algorithm's average time and worst-case performance is O(n2), so it is rarely used to sort
-                large, unordered data sets. Bubble sort can be used to sort a small number of items (where its asymptotic inefficiency is not a high penalty). Bubble sort can also be used efficiently on a list of any length that is nearly sorted (that is, the
-                elements are not significantly out of place). For example, if any number of elements are out of place by only one position (e.g. 0123546789 and 1032547698), bubble sort's exchange will get them in order on the first pass, the second pass will
-                find all elements in order, so the sort will take only 2n time.
-            </p>
-            <div class="code">
-                <script src="https://gist.github.com/ShamsAnsari/c5d1b3bbcad2b9f2cae32e8c75c86589.js"></script>
-            </div>
-            <div>
-                <div class="visual-algo">
-                    <svg id='root' width=640 height=400></svg>
+                    <button class="buttons" id='insertion-play-button' type="button">START</button>
+                    <button class="buttons" id='insertion-generate-button' type="button">GENERATE</button>
+                    <input type="number" id="insertion-duration-input"
+                           min="0" max="1400" value="100" step="100">
                 </div>
-                <div class="buttons">
-                    <button id='play-button' type="button">start</button>
-                    <button id='generate-button' type="button">generate</button>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--
+        <div class="merge-sort">
+
+            <h3 id="merge-sort">Merge Sort</h3>
+            <div class="info">
+                <p>
+                    Merge sort takes advantage of the ease of merging already sorted lists into
+                    a new sorted list. It starts by comparing every two elements (i.e., 1 with
+                    2, then 3 with 4...) and swapping them if the first should come after the
+                    second. It then merges each of the resulting lists of two into lists of
+                    four, then merges those lists of four, and so on; until at last two lists
+                    are merged into the final sorted list. Of the algorithms described here,
+                    this is the first that scales well to very large lists, because its
+                    worst-case running time is O(n log n). It is also easily applied to lists,
+                    not only arrays, as it only requires sequential access, not random access.
+                    However, it has additional O(n) space complexity, and involves a large
+                    number of copies in simple implementations.
+                    <br>Merge sort has seen a relatively recent surge in popularity for practical
+                    implementations, due to its use in the sophisticated algorithm Timsort,
+                    which is used for the standard sort routine in the programming languages
+                    Python and Java (as of JDK7). Merge sort itself is the standard
+                    routine in Perl, among others, and has been used in Java at least
+                    since 2000 in JDK1.3.
+                </p>
+                <div class="code">
+                    <script src="https://gist.github.com/ShamsAnsari/db1c497dc251c812d1b29b576c04660a.js"></script>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="heap-sort">
+
+            <h3 id="heapsort">Heapsort</h3>
+            <div class="info">
+                <p>
+                    Heapsort is a much more efficient version of selection sort. It also works
+                    by determining the largest (or smallest) element of the list, placing that
+                    at the end (or beginning) of the list, then continuing with the rest of the list, but
+                    accomplishes this task efficiently by using a data structure called a heap,
+                    a special type of binary tree.[29] Once the data list has been made into a
+                    heap, the root node is guaranteed to be the largest (or smallest) element. When it is removed
+                    and placed at the end of the list, the heap is rearranged so the largest
+                    element remaining moves to the root. Using the heap, finding the next largest
+                    element takes O(log n) time, instead of O(n) for a linear scan as in simple selection sort.
+                    This allows Heapsort to run in O(n log n) time, and this is also the worst case complexity.
+                </p>
+                <div class="code">
+                    <script src="https://gist.github.com/ShamsAnsari/1f8a9127aa130d68478922eab1e7c1ae.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <div class="quicksort">
+            <h3 id="quicksort">Quicksort</h3>
+            <div class="info">
+                <p>
+                    Quicksort is a divide and conquer algorithm which relies on a partition operation: to partition an array, an element called a pivot is selected.[30][31] All elements smaller than the pivot are moved before it and all greater elements are moved
+                    after it. This can be done efficiently in linear time and in-place. The lesser and greater sublists are then recursively sorted. This yields average time complexity of O(n log n), with low overhead, and thus this is a popular algorithm. Efficient
+                    implementations of quicksort (with in-place partitioning) are typically unstable sorts and somewhat complex, but are among the fastest sorting algorithms in practice. Together with its modest O(log n) space usage, quicksort is one of the most
+                    popular sorting algorithms and is available in many standard programming libraries.
+                    <br>The important caveat about quicksort is that its worst-case performance is O(n2); while this is rare, in naive implementations (choosing the first or last element as pivot) this occurs for sorted data, which is a common case. The most complex
+                    issue in quicksort is thus choosing a good pivot element, as consistently poor choices of pivots can result in drastically slower O(n2) performance, but good choice of pivots yields O(n log n) performance, which is asymptotically optimal. For
+                    example, if at each step the median is chosen as the pivot then the algorithm works in O(n log n). Finding the median, such as by the median of medians selection algorithm is however an O(n) operation on unsorted lists and therefore exacts
+                    significant overhead with sorting. In practice choosing a random pivot almost certainly yields O(n log n) performance.
+                </p>
+                <div class="code">
+                    <script src="https://gist.github.com/ShamsAnsari/2cf342c913a5f35f33ed799d6c82e244.js"></script>
+                </div>
+            </div>
+        </div>
+        -->
+
+
+
 
     <footer>
         <a href="#title">Top</a>
