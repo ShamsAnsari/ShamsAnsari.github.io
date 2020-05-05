@@ -1,6 +1,3 @@
-/**
- * console.log("i=" + i + "\tj=" + j);
-            console.log("swap=" + j +"\t" + (j - 1));*/
 
 
 const bubbleRoot = d3.select('#bubble-root');
@@ -9,17 +6,19 @@ const insertionRoot = d3.select('#insertion-root');
 
 const svgWidth = +bubbleRoot.attr('width');
 const svgHeight = +bubbleRoot.attr('height');
-const bottomSvgSpace = 30;
+const bottomSvgSpace = 30; // space of bubbles
 const barChartHeight = svgHeight - bottomSvgSpace;
 
+//length of array
 const length = 25;
+
 
 var bubbleDuration = 100;
 var selectionDuration = 100;
 var insertionDuration = 100;
 
 const barWidth = svgWidth / length;
-const padding = barWidth * 0.0;
+const padding = barWidth * 0.0; // space between bars
 
 var bubbleRunning = false;
 var selectionRunning = false;
@@ -127,6 +126,12 @@ insertionPlayButton.on('click', function () {
 
 
 //Helpful functions
+/**
+ * Swaps indexes i and j in array a
+ * @param {Number} i
+ * @param {Number} j
+ * @param {Array} a
+ */
 const swap = (i, j, a) => {
     let temp = a[j];
     a[j] = a[i];
@@ -148,7 +153,13 @@ const render = (selection, data, duration) => {
     groupsEnter.exit().remove();
     groupsEnter.append('rect')
         .merge(groups.select('rect'))
-        .attr('width', barWidth - padding)
+        .attr('width', function (d, i) {
+            /*            if (d.isSelected == true) {
+                            return (barWidth - padding) * 2;
+                        }*/
+            return barWidth - padding;
+        })
+        .attr('height', d => heightScale(d.value))
         .attr('fill', function (d) {
             if (d.isSelected == true) {
                 return 'yellow';
@@ -160,8 +171,8 @@ const render = (selection, data, duration) => {
                 //return d3.interpolateInferno(1-lowerScale(d.value));
                 //return d3.interpolateWarm(1-lowerScale(d.value));
             }
-        })
-        .attr('height', d => heightScale(d.value));
+        });
+  
 
 
     groupsEnter.append('circle')
@@ -213,13 +224,16 @@ const render = (selection, data, duration) => {
             }
         })
 
- 
-
 }
-
-const setSelected = function (indexes, bool, arr) {
+/**
+ * Sets the property of 'isSelected' to bool in array a
+ * @param {Array} indexes
+ * @param {Boolean} bool
+ * @param {Array} a
+ */
+const setSelected = function (indexes, bool, a) {
     for (let i = 0; i < indexes.length; i++) {
-        arr[indexes[i]].isSelected = bool;
+        a[indexes[i]].isSelected = bool;
     }
 }
 
@@ -343,6 +357,8 @@ const makeObject = num => {
 var bubbleArray = d3.range(length).map(makeObject);
 var selectionArray = d3.range(length).map(makeObject);
 var insertionArray = d3.range(length).map(makeObject); 
+
+
 render(bubbleRoot, bubbleArray, bubbleDuration);
 render(selectionRoot, selectionArray, selectionDuration);
 render(insertionRoot, insertionArray, insertionDuration);
