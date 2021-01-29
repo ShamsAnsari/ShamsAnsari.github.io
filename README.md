@@ -7,4 +7,4 @@ Interactive website to visualize simple sorts such as Bubble sort, selection sor
 Created using d3.js library
 
 # Demo
-![Insertion Sort Demo](demo.gif)
+![Insertion Sort Demo](https://github.com/ShamsAnsari/Simple-Sorts-Visualization/blob/master/Demo.gif)
